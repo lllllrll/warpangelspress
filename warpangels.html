@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warp Angels - Press Release</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .page {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.15);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            pointer-events: none;
+        }
+        
+        .press-tag {
+            background: #ff6b6b;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(255,107,107,0.3);
+        }
+        
+        .main-title {
+            color: white;
+            font-size: 42px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            color: #cccccc;
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+        
+        .album-info {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 15px;
+            padding: 20px;
+            color: white;
+            font-weight: 500;
+        }
+        
+        .content {
+            padding: 50px;
+        }
+        
+        .album-cover-section {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .album-cover {
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            margin: 0 auto 20px;
+            background-image: url('https://label-engine-public.s3.amazonaws.com/releases/artwork/large/42b207d7e2c15b6f21889a8e2539bfc7.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .album-cover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(102,126,234,0.1) 0%, rgba(118,75,162,0.1) 100%);
+            border-radius: 20px;
+        }
+        
+        .album-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: #2d2d2d;
+            margin-bottom: 5px;
+        }
+        
+        .artist-name {
+            font-size: 16px;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 15px 40px rgba(102,126,234,0.2);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .stat-item {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .features-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-weight: 500;
+        }
+        
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .priority-tracks {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+            box-shadow: 0 15px 40px rgba(255,107,107,0.2);
+        }
+        
+        .priority-tracks h3 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        
+        .tracks-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .track-item {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .spotify-link {
+            background: #1DB954;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(29,185,84,0.3);
+            transition: transform 0.2s ease;
+        }
+        
+        .spotify-link:hover {
+            transform: translateY(-2px);
+        }
+        
+        .contacts {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+        
+        .contacts h3 {
+            color: #2d2d2d;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .contact-item {
+            margin: 10px 0;
+            font-weight: 500;
+        }
+        
+        .date-highlight {
+            font-size: 48px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 18px;
+            text-align: center;
+            color: #666;
+            margin: 30px 0;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="press-tag">PRESS RELEASE • FOR IMMEDIATE RELEASE</div>
+            <h1 class="main-title">SEVEN YEARS OF SILENCE.<br>MAY 29 — THE EXPLOSION.</h1>
+            <p class="subtitle">timmies x shiloh dynasty / "warp angels" / 7 tracks / Event of the Year</p>
+            <div class="album-info">
+                <strong>warp angels</strong> - The collaboration the music world has been waiting for
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="album-cover-section">
+                <div class="album-cover"></div>
+                <h2 class="album-title">warp angels</h2>
+                <p class="artist-name">by timmies x shiloh dynasty</p>
+            </div>
+            
+            <div class="priority-tracks">
+                <h3>Priority Tracks for Promotion</h3>
+                <div class="tracks-grid">
+                    <div class="track-item">"Under Your Spell"</div>
+                    <div class="track-item">"Call After"</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">THE STORY IN 10 SECONDS</h2>
+                <p><strong>Shiloh Dynasty</strong> — the voice sampled by everyone from XXXTentacion to Juice WRLD. Billions of streams. Cult status.</p>
+                <p><strong>timmies</strong> — the producer who knows how to turn emotion into hits.</p>
+                <p>Last collaborative album — <strong>2017</strong>. The industry has been waiting.</p>
+                <p><strong>May 29</strong>, they break the silence.</p>
+            </div>
+            
+            <div class="highlight-box">
+                <h2 style="margin-bottom: 20px; font-size: 28px;">WHY THIS IS MONEY</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">47M+</div>
+                        <div class="stat-label">Combined Followers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Viral DNA</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">7</div>
+                        <div class="stat-label">TikTok Bombs</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Gen Z</div>
+                        <div class="stat-label">Purchasing Power</div>
+                    </div>
+                </div>
+                <p style="margin-top: 20px; font-weight: 500;"><strong>Content Goldmine:</strong> Every previous release became a meme/trend. This generation grew up on their sound and now has money to spend.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">INSIDE "warp angels"</h2>
+                <p style="font-size: 18px; margin-bottom: 20px; font-weight: 600;">Perfect Balance of Nostalgia & Relevance</p>
+                <ul class="features-list">
+                    <li>Slow-burn novocaine variations — for emotional moments</li>
+                    <li>Dance-ready tracks — tribute to classic remixes</li>
+                    <li>Signature shiloh guitar — instant recognition</li>
+                    <li>timmies' modern production — contemporary without losing soul</li>
+                </ul>
+                <p style="font-weight: 600; margin-top: 20px;"><strong>7 tracks = concentrated essence, no filler.</strong> Each song crafted for both deep listening and instant viral potential.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">FOR PLATFORMS</h2>
+                <ul class="features-list">
+                    <li><strong>Radio:</strong> 3-4 radio-friendly tracks</li>
+                    <li><strong>Streaming:</strong> Full playthrough album</li>
+                    <li><strong>Social Media:</strong> Ready-made content</li>
+                    <li><strong>Playlists:</strong> Guaranteed top placement</li>
+                </ul>
+            </div>
+            
+            <div class="highlight-box">
+                <h2 style="margin-bottom: 20px; font-size: 28px;">THE NUMBERS THAT WORK</h2>
+                <p style="font-size: 18px; margin-bottom: 15px; font-weight: 600;">Timing is Everything</p>
+                <p><strong>7 YEARS</strong> of anticipation = accumulated hype</p>
+                <p><strong>7 TRACKS</strong> = concentrated essence, no water</p>
+                <p style="margin-top: 20px; font-size: 18px; font-weight: 600;">Market Position</p>
+                <p><strong>3RD ALBUM</strong> = maturity + experience</p>
+                <p><strong>POST-PANDEMIC</strong> = emotional need of audience</p>
+            </div>
+            
+            <div class="cta-section">
+                <h2 style="margin-bottom: 20px; font-size: 32px;">🎵 PRE-SAVE NOW ON SPOTIFY</h2>
+                <a href="https://open.spotify.com/prerelease/5MCbvjLWFugEVOecxpH7bT" class="spotify-link">
+                    LISTEN ON SPOTIFY
+                </a>
+                <div class="date-highlight">MAY 29</div>
+                <p style="font-size: 20px; font-weight: 600;">ALL PLATFORMS | THE EVENT YOU CANNOT MISS</p>
+            </div>
+            
+            <div class="quote">
+                "This is the collaboration the music world has been waiting for. After seven years of silence, timmies and shiloh dynasty return with "warp angels" — a 7-track journey that bridges the gap between nostalgic longing and contemporary relevance."
+            </div>
+            
+            <div class="contacts">
+                <h3>MEDIA CONTACTS</h3>
+                <div class="contact-item">rubin@labellemusique.co</div>
+                <div class="contact-item">christian.songco@createmusicgroup.com</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Print functionality
+        window.addEventListener('load', function() {
+            // Add print styles
+            const printButton = document.createElement('button');
+            printButton.innerHTML = '📄 Save as PDF';
+            printButton.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                border: none;
+                padding: 15px 25px;
+                border-radius: 25px;
+                font-weight: 700;
+                cursor: pointer;
+                box-shadow: 0 10px 30px rgba(102,126,234,0.3);
+                z-index: 1000;
+                font-size: 14px;
+                transition: transform 0.2s ease;
+            `;
+            
+            printButton.addEventListener('click', function() {
+                window.print();
+            });
+            
+            printButton.addEventListener('mouseover', function() {
+                this.style.transform = 'translateY(-2px)';
+            });
+            
+            printButton.addEventListener('mouseout', function() {
+                this.style.transform = 'translateY(0)';
+            });
+            
+            document.body.appendChild(printButton);
+        });
+        
+        // Add print media styles
+        const printStyles = document.createElement('style');
+        printStyles.innerHTML = `
+            @media print {
+                body {
+                    background: white !important;
+                    padding: 0 !important;
+                }
+                .page {
+                    box-shadow: none !important;
+                    border-radius: 0 !important;
+                    max-width: none !important;
+                }
+                button {
+                    display: none !important;
+                }
+            }
+        `;
+        document.head.appendChild(printStyles);
+    </script>
+</body>
+</html>
